@@ -26,7 +26,17 @@
         <div class="collapse navbar-collapse" id="profile_navbar">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a href="#" class="nav-link text-danger" id="log_out">
+                    <a href="edit_profile.html" class="nav-link text-success" id="edit_profile">
+                        Edit Profile
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link text-danger" id="delete_profile">
+                        Delete Profile
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link text-primary" id="log_out">
                         Log Out
                     </a>
                 </li>
@@ -41,7 +51,8 @@
                     <p>Image here: </p>
                 </div>
                 <h3 class="mt-3" id="username">Username: </h3>
-                <!-- <p id="signup_ago">Registrado hace: </p> -->
+                <h4 class="mt-3" id="first_name">First Name: </h4>
+                <p class="mt-3">Profile created at: </p>
                 <time class="text-capitalize text-warning" id="signup_ago"></time>
             </div>
         </div>
@@ -64,6 +75,8 @@
     <script src="../js/jquery.timeago.js"></script>
     <!-- Script is_not_logged_in -->
     <script src="../js/is_not_logged_in.js"></script>
+    <!-- Script Deleteaccount -->
+    <script src="../js/delete_profile.js"></script>
     <!-- Script Profile -->
     <script src="../js/app.js"></script>
 </body>

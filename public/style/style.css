@@ -12,3 +12,8 @@ img {
     width: 50%;
     border-radius: 5px;
 }
+
+.image_25 {
+    width: 40% !important;
+    margin: 0 auto;
+}

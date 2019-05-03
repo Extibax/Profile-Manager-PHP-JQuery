@@ -31,6 +31,7 @@ $(document).ready(function () {
 
                 $('#image_profile').html(template);
                 $('#username').text(content.username);
+                $('#first_name').text(content.first_name);
                 $('#signup_ago').timeago('update', content.created_at);
             } catch (error) {
                 console.log('Error trying parse to JSON: ' + error);
