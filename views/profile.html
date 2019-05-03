@@ -35,7 +35,16 @@
     </nav>
 
     <div class="container">
-
+        <div class="row mt-5">
+            <div class="col-md-6 offset-md-3 text-center">
+                <div id="image_profile">
+                    <p>Image here: </p>
+                </div>
+                <h3 class="mt-3" id="username">Username: </h3>
+                <!-- <p id="signup_ago">Registrado hace: </p> -->
+                <time class="text-capitalize text-warning" id="signup_ago"></time>
+            </div>
+        </div>
     </div>
 
     <!-- Script JQuery -->
@@ -51,8 +60,10 @@
     </script>
     <!-- Script Sweetalert -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <!-- Script is_logged_in -->
-    <script src="../js/is_logged_in.js"></script>
+    <!-- Script Timeago -->
+    <script src="../js/jquery.timeago.js"></script>
+    <!-- Script is_not_logged_in -->
+    <script src="../js/is_not_logged_in.js"></script>
     <!-- Script Profile -->
     <script src="../js/app.js"></script>
 </body>

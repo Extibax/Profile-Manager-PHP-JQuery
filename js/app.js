@@ -1,4 +1,11 @@
 $(document).ready(function () {
+
+    isNotLoggedIn();
+
+    loadContent();
+
+    $('time.timeago').timeago();
+
     $('#log_out').click(function () {
         $.get('../php/log_out.php', function (res) {
             console.log(res);
@@ -11,4 +18,23 @@ $(document).ready(function () {
             }
         });
     });
+
+    function loadContent() {
+        $.get('../php/load_content.php', 'aplication/json', function(res) {
+            let content = {};
+            try {
+                content = JSON.parse(res);
+
+                let template = "";
+
+                template = `<img src="data:${content.image_file_type};base64,${content.image_file_content}">`;
+
+                $('#image_profile').html(template);
+                $('#username').text(content.username);
+                $('#signup_ago').timeago('update', content.created_at);
+            } catch (error) {
+                console.log('Error trying parse to JSON: ' + error);
+            }
+        });
+    }
 });

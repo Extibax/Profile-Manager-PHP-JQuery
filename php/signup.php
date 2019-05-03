@@ -31,7 +31,7 @@ if (isset($_FILES['image_file'], $_POST['first_name'], $_POST['username'], $_POS
         
         $query = "INSERT INTO profile_manager_users "
                 . "VALUES "
-                . "(null, :first_name, :username, :password, :image_file_type, :image_file_content)";
+                . "(null, :first_name, :username, :password, :image_file_type, :image_file_content, null)";
         
         $saveuser = $DBH->prepare($query);
         

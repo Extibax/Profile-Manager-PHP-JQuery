@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS users(
     username                VARCHAR(100) NOT NULL,
     password                VARCHAR(200) NOT NULL,
     imagefile_type          VARCHAR(100) NOT NULL,
-    imagefile_content       LONGBLOB NOT NULL,    
+    imagefile_content       LONGBLOB NOT NULL,
+    created_at              TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT pk_users PRIMARY KEY(id)
 )ENGINE='InnoDB' CHARACTER SET utf8 COLLATE utf8_unicode_ci;

@@ -7,3 +7,8 @@
 body {
     height: 100vh !important;
 }
+
+img {
+    width: 50%;
+    border-radius: 5px;
+}
