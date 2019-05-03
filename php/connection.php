@@ -1,6 +1,10 @@
 <?php
 
-require dirname(__DIR__) . 'vendor/autoload.php';
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+require dirname(__DIR__) . '/vendor/autoload.php';
 
 $dotenv = Dotenv\Dotenv::create(dirname(__DIR__));
 $dotenv->load();
@@ -11,7 +15,7 @@ $USER = $_ENV['DB_USER'];
 $PASS = $_ENV['DB_PASS'];
 
 try {
-    $DBH = new PDO('mysql:HOST=$HOST;NAME=$NAME;charset=utf8', $USER, $PASS, [
+    $DBH = new PDO("mysql:host=$HOST;dbname=$NAME;charset=utf8", $USER, $PASS, [
         PDO::ATTR_EMULATE_PREPARES => false,
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
     ]);

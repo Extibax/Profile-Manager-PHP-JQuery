@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Link Favicon -->
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <!-- Link Bootstrap -->
     <link rel="stylesheet" href="../public/style/bootstrap.min.css">
     <!-- Link CSS -->
@@ -14,6 +16,10 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <a class="navbar-brand" href="../index.html">Profile Manager</a>
+    </nav>
+
     <div class="container">
         <div class="row">
             <div class="col-md-6 offset-md-3 mt-5">
@@ -34,6 +40,9 @@
                     <div class="form-group">
                         <input type="submit" id="submit" class="form-control btn btn-primary" value="Completed">
                     </div>
+                    <a href="signin.html" class="form-control btn btn-danger">
+                        Sign In
+                    </a>
                 </form>
             </div>
         </div>
@@ -50,7 +59,11 @@
     <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'
         integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM' crossorigin='anonymous'>
     </script>
-    <!-- Script signup -->
+    <!-- Script Sweetalert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- Script is_logged_in -->
+    <script src="../js/is_logged_in.js"></script>
+    <!-- Script Signup -->
     <script src="../js/signup.js"></script>
 </body>
 
