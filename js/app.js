@@ -20,7 +20,7 @@ $(document).ready(function () {
     });
 
     function loadContent() {
-        $.get('../php/load_content.php', 'aplication/json', function(res) {
+        $.get('../php/load_content.php', 'aplication/json', function (res) {
             let content = {};
             try {
                 content = JSON.parse(res);
@@ -32,7 +32,7 @@ $(document).ready(function () {
                 $('#image_profile').html(template);
                 $('#username').text(content.username);
                 $('#first_name').text(content.first_name);
-                $('#signup_ago').timeago('update', content.created_at);
+                $('#signup_ago').timeago('update', new Date(content.created_at));
             } catch (error) {
                 console.log('Error trying parse to JSON: ' + error);
             }

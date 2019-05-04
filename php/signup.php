@@ -7,6 +7,7 @@ if (isset($_FILES['image_file'], $_POST['first_name'], $_POST['username'], $_POS
     $first_name = $_POST['first_name'];
     $username = $_POST['username'];
     $password = $_POST['password'];
+    $time = $_POST['time'];
 
     $query = "SELECT username FROM profile_manager_users WHERE username = :username";
 
@@ -31,17 +32,18 @@ if (isset($_FILES['image_file'], $_POST['first_name'], $_POST['username'], $_POS
         
         $query = "INSERT INTO profile_manager_users "
                 . "VALUES "
-                . "(null, :first_name, :username, :password, :image_file_type, :image_file_content, null)";
+                . "(null, :first_name, :username, :password, :image_file_type, :image_file_content, :time)";
         
-        $saveuser = $DBH->prepare($query);
+        $save_user = $DBH->prepare($query);
         
-        $saveuser->bindValue(':first_name', $first_name);
-        $saveuser->bindValue(':username', $username);
-        $saveuser->bindValue(':password', $password_encrypt);
-        $saveuser->bindValue(':image_file_type', $image_file_type);
-        $saveuser->bindValue(':image_file_content', $image_file_content);
+        $save_user->bindValue(':first_name', $first_name);
+        $save_user->bindValue(':username', $username);
+        $save_user->bindValue(':password', $password_encrypt);
+        $save_user->bindValue(':image_file_type', $image_file_type);
+        $save_user->bindValue(':image_file_content', $image_file_content);
+        $save_user->bindValue(':time', $time);
         
-        echo $saveuser->execute() ? 1 : "Error: " . $saveuser->errorInfo();
+        echo $save_user->execute() ? 1 : "Error: " . $save_user->errorInfo();
     }
 } else {
     echo 'Were not receiving anything';

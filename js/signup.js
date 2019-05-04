@@ -15,6 +15,7 @@ $(document).ready(function () {
         user_data.append('first_name', $('#first_name').val());
         user_data.append('username', $('#username').val());
         user_data.append('password', $('#password').val());
+        user_data.append('time', new Date());
 
         $.ajax({
             url: '../php/signup.php',
