@@ -50,6 +50,8 @@ $(document).ready(function () {
                     swal('Congratulations', 'Your profile has been updated', 'success').then(() => {
                         loadContent();
                     });
+                } else if (res == 2) {
+                    swal('Sorry', 'Any input can be null', 'error');
                 } else {
                     swal('Sorry', 'Error trying update your profile', 'error');
                 }

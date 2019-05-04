@@ -44,5 +44,5 @@ if (isset($_SESSION['User'], $_POST['first_name'], $_POST['username'])) {
         }
     }
 } else {
-    echo 'Were not receiving anything';
+    echo 2;
 }
